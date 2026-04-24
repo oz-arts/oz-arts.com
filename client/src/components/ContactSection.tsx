@@ -1,0 +1,205 @@
+/**
+ * DESIGN: Dark Atelier — Contact Section
+ * Layout asymétrique : infos à gauche, formulaire à droite.
+ * Fond avec texture beige/crème subtile. Accent cuivré.
+ */
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { MapPin, Phone, Mail, Instagram, Send, Clock } from "lucide-react";
+import { toast } from "sonner";
+
+export default function ContactSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Build mailto link
+    const subject = encodeURIComponent(`Demande de devis - ${formData.service || "Projet résine"}`);
+    const body = encodeURIComponent(
+      `Nom: ${formData.name}\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:contact@ozart.pro?subject=${subject}&body=${body}`;
+    toast.success("Redirection vers votre messagerie...");
+  };
+
+  return (
+    <section id="contact" className="relative py-24 lg:py-32">
+      {/* Copper separator */}
+      <div className="copper-line mb-24 lg:mb-32" />
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+          {/* Left — Contact Info (2 cols) */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:col-span-2"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-[1px] w-12 bg-copper" />
+              <span className="text-xs tracking-[0.3em] uppercase text-copper font-medium">
+                Contact
+              </span>
+            </div>
+
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6">
+              Parlons de
+              <br />
+              <span className="text-gradient-copper">votre projet</span>
+            </h2>
+
+            <p className="text-[oklch(0.55_0.005_250)] text-sm leading-relaxed mb-10">
+              Chaque projet commence par une conversation. Décrivez-nous votre
+              vision et nous vous proposerons une solution sur mesure.
+            </p>
+
+            {/* Contact details */}
+            <div className="space-y-5">
+              <div className="flex items-start gap-4">
+                <MapPin size={18} className="text-copper mt-0.5 shrink-0" strokeWidth={1.5} />
+                <div>
+                  <p className="text-sm text-white font-medium">Adresse</p>
+                  <p className="text-xs text-[oklch(0.5_0.005_250)] mt-0.5">
+                    10 Rue de l'Argile
+                    <br />
+                    67110 Gundershoffen
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Clock size={18} className="text-copper mt-0.5 shrink-0" strokeWidth={1.5} />
+                <div>
+                  <p className="text-sm text-white font-medium">Horaires</p>
+                  <p className="text-xs text-[oklch(0.5_0.005_250)] mt-0.5">
+                    Lun — Ven : 8h00 — 18h00
+                    <br />
+                    Sam : Sur rendez-vous
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Instagram size={18} className="text-copper mt-0.5 shrink-0" strokeWidth={1.5} />
+                <div>
+                  <p className="text-sm text-white font-medium">Instagram</p>
+                  <a
+                    href="https://www.instagram.com/ozart.pro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-copper hover:text-copper-light transition-colors"
+                  >
+                    @ozart.pro
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right — Form (3 cols) */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="lg:col-span-3"
+          >
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-[10px] tracking-[0.2em] uppercase text-[oklch(0.45_0.005_250)] mb-2 font-medium">
+                    Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full bg-[oklch(0.1_0.005_250)] border border-[oklch(0.2_0.005_250)] px-4 py-3 text-sm text-white placeholder:text-[oklch(0.35_0.005_250)] focus:border-copper focus:outline-none transition-colors"
+                    placeholder="Votre nom"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] tracking-[0.2em] uppercase text-[oklch(0.45_0.005_250)] mb-2 font-medium">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-[oklch(0.1_0.005_250)] border border-[oklch(0.2_0.005_250)] px-4 py-3 text-sm text-white placeholder:text-[oklch(0.35_0.005_250)] focus:border-copper focus:outline-none transition-colors"
+                    placeholder="votre@email.com"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-[10px] tracking-[0.2em] uppercase text-[oklch(0.45_0.005_250)] mb-2 font-medium">
+                    Téléphone
+                  </label>
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full bg-[oklch(0.1_0.005_250)] border border-[oklch(0.2_0.005_250)] px-4 py-3 text-sm text-white placeholder:text-[oklch(0.35_0.005_250)] focus:border-copper focus:outline-none transition-colors"
+                    placeholder="06 00 00 00 00"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] tracking-[0.2em] uppercase text-[oklch(0.45_0.005_250)] mb-2 font-medium">
+                    Service souhaité
+                  </label>
+                  <select
+                    value={formData.service}
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    className="w-full bg-[oklch(0.1_0.005_250)] border border-[oklch(0.2_0.005_250)] px-4 py-3 text-sm text-white focus:border-copper focus:outline-none transition-colors appearance-none"
+                  >
+                    <option value="sol-epoxy">Sol en résine époxy</option>
+                    <option value="mur">Revêtement mural</option>
+                    <option value="tapis-pierre">Tapis de pierre</option>
+                    <option value="paillete">Résine pailletée</option>
+                    <option value="metallise">Époxy métallisé</option>
+                    <option value="art">Art décoratif</option>
+                    <option value="autre">Autre projet</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[10px] tracking-[0.2em] uppercase text-[oklch(0.45_0.005_250)] mb-2 font-medium">
+                  Votre message
+                </label>
+                <textarea
+                  required
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full bg-[oklch(0.1_0.005_250)] border border-[oklch(0.2_0.005_250)] px-4 py-3 text-sm text-white placeholder:text-[oklch(0.35_0.005_250)] focus:border-copper focus:outline-none transition-colors resize-none"
+                  placeholder="Décrivez votre projet, les surfaces concernées, vos préférences de couleurs..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-copper text-[oklch(0.08_0.005_250)] font-heading font-semibold text-sm tracking-wide uppercase hover:bg-copper-light transition-colors duration-300"
+              >
+                <Send size={16} />
+                Envoyer la demande
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
