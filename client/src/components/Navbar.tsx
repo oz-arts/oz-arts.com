@@ -1,12 +1,12 @@
 /**
  * DESIGN: Dark Atelier — Galerie d'Art Industrielle
  * Navigation ultra-minimaliste, horizontale, fond transparent avec blur au scroll.
- * Logo OzArt à gauche, liens de navigation à droite.
+ * Logo OZART "Les Beaux Arts" à gauche, liens de navigation à droite.
  * Accent cuivré/bronze (#B87333) pour les éléments interactifs.
  */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Instagram, Phone, MapPin } from "lucide-react";
+import { Menu, X, Instagram, Phone } from "lucide-react";
 
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
@@ -52,10 +52,13 @@ export default function Navbar() {
                 e.preventDefault();
                 handleNavClick("#accueil");
               }}
-              className="flex items-center gap-3 group"
+              className="flex flex-col items-start group"
             >
-              <span className="font-heading text-2xl lg:text-3xl font-bold tracking-tight text-white group-hover:text-gradient-copper transition-colors duration-300">
-                Oz<span className="text-gradient-copper">Art</span>
+              <span className="font-heading text-2xl lg:text-3xl font-bold tracking-[0.15em] text-white group-hover:text-gradient-copper transition-colors duration-300">
+                OZ<span className="text-gradient-copper">ART</span>
+              </span>
+              <span className="text-[8px] lg:text-[9px] tracking-[0.35em] uppercase text-[oklch(0.55_0.005_250)] font-medium -mt-0.5">
+                — Les Beaux Arts —
               </span>
             </a>
 
@@ -82,6 +85,12 @@ export default function Navbar() {
                 className="text-[oklch(0.5_0.005_250)] hover:text-copper transition-colors duration-300"
               >
                 <Instagram size={18} />
+              </a>
+              <a
+                href="tel:+33671874441"
+                className="text-[oklch(0.5_0.005_250)] hover:text-copper transition-colors duration-300"
+              >
+                <Phone size={18} />
               </a>
             </div>
 
@@ -137,10 +146,9 @@ export default function Navbar() {
               >
                 <Instagram size={22} />
               </a>
-              <a href="tel:+33000000000" className="hover:text-copper transition-colors">
+              <a href="tel:+33671874441" className="hover:text-copper transition-colors">
                 <Phone size={22} />
               </a>
-              <MapPin size={22} />
             </motion.div>
           </motion.div>
         )}

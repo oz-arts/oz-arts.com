@@ -2,7 +2,7 @@
  * DESIGN: Dark Atelier — Footer
  * Minimaliste, lignes cuivrées, liens essentiels.
  */
-import { Instagram, ArrowUp } from "lucide-react";
+import { Instagram, ArrowUp, Phone } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -17,11 +17,11 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Logo + tagline */}
           <div className="text-center lg:text-left">
-            <span className="font-heading text-2xl font-bold text-white">
-              Oz<span className="text-gradient-copper">Art</span>
+            <span className="font-heading text-2xl font-bold tracking-[0.15em] text-white">
+              OZ<span className="text-gradient-copper">ART</span>
             </span>
-            <p className="text-xs text-[oklch(0.4_0.005_250)] mt-1 tracking-wide">
-              Quand le luxe rencontre l'art
+            <p className="text-[8px] text-[oklch(0.4_0.005_250)] mt-0.5 tracking-[0.35em] uppercase">
+              — Les Beaux Arts —
             </p>
           </div>
 
@@ -71,6 +71,12 @@ export default function Footer() {
             >
               <Instagram size={16} />
             </a>
+            <a
+              href="tel:+33671874441"
+              className="w-9 h-9 flex items-center justify-center border border-[oklch(0.22_0.005_250)] text-[oklch(0.45_0.005_250)] hover:border-copper hover:text-copper transition-all duration-300"
+            >
+              <Phone size={16} />
+            </a>
             <button
               onClick={scrollToTop}
               className="w-9 h-9 flex items-center justify-center border border-[oklch(0.22_0.005_250)] text-[oklch(0.45_0.005_250)] hover:border-copper hover:text-copper transition-all duration-300"
@@ -87,7 +93,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} OzArt — Tous droits réservés
           </p>
           <p className="text-[10px] text-[oklch(0.3_0.005_250)] tracking-wider">
-            10 Rue de l'Argile, 67110 Gundershoffen — Grand Est
+            Artiste & Décorateur — Grand Est, France
           </p>
         </div>
       </div>

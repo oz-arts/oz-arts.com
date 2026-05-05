@@ -1,11 +1,12 @@
 /**
  * DESIGN: Dark Atelier — Contact Section
  * Layout asymétrique : infos à gauche, formulaire à droite.
- * Fond avec texture beige/crème subtile. Accent cuivré.
+ * Coordonnées complètes SANS adresse physique (demande client).
+ * Email: contact@oz-arts.com, Tel: 06 71 87 44 41
  */
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { MapPin, Phone, Mail, Instagram, Send, Clock } from "lucide-react";
+import { Phone, Mail, Instagram, Send, Clock } from "lucide-react";
 import { toast } from "sonner";
 
 export default function ContactSection() {
@@ -21,12 +22,11 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Build mailto link
     const subject = encodeURIComponent(`Demande de devis - ${formData.service || "Projet résine"}`);
     const body = encodeURIComponent(
       `Nom: ${formData.name}\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
     );
-    window.location.href = `mailto:contact@ozart.pro?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:contact@oz-arts.com?subject=${subject}&body=${body}`;
     toast.success("Redirection vers votre messagerie...");
   };
 
@@ -65,14 +65,28 @@ export default function ContactSection() {
             {/* Contact details */}
             <div className="space-y-5">
               <div className="flex items-start gap-4">
-                <MapPin size={18} className="text-copper mt-0.5 shrink-0" strokeWidth={1.5} />
+                <Phone size={18} className="text-copper mt-0.5 shrink-0" strokeWidth={1.5} />
                 <div>
-                  <p className="text-sm text-white font-medium">Adresse</p>
-                  <p className="text-xs text-[oklch(0.5_0.005_250)] mt-0.5">
-                    10 Rue de l'Argile
-                    <br />
-                    67110 Gundershoffen
-                  </p>
+                  <p className="text-sm text-white font-medium">Téléphone</p>
+                  <a
+                    href="tel:+33671874441"
+                    className="text-xs text-copper hover:text-copper-light transition-colors"
+                  >
+                    06 71 87 44 41
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Mail size={18} className="text-copper mt-0.5 shrink-0" strokeWidth={1.5} />
+                <div>
+                  <p className="text-sm text-white font-medium">Email</p>
+                  <a
+                    href="mailto:contact@oz-arts.com"
+                    className="text-xs text-copper hover:text-copper-light transition-colors"
+                  >
+                    contact@oz-arts.com
+                  </a>
                 </div>
               </div>
 
@@ -91,17 +105,45 @@ export default function ContactSection() {
               <div className="flex items-start gap-4">
                 <Instagram size={18} className="text-copper mt-0.5 shrink-0" strokeWidth={1.5} />
                 <div>
-                  <p className="text-sm text-white font-medium">Instagram</p>
-                  <a
-                    href="https://www.instagram.com/ozart.pro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-copper hover:text-copper-light transition-colors"
-                  >
-                    @ozart.pro
-                  </a>
+                  <p className="text-sm text-white font-medium">Réseaux sociaux</p>
+                  <div className="flex flex-col gap-1 mt-0.5">
+                    <a
+                      href="https://www.instagram.com/ozart.pro"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-copper hover:text-copper-light transition-colors"
+                    >
+                      Instagram : @ozart.pro
+                    </a>
+                    <a
+                      href="https://www.tiktok.com/@ozart.pro"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-copper hover:text-copper-light transition-colors"
+                    >
+                      TikTok : @ozart.pro
+                    </a>
+                    <a
+                      href="https://www.facebook.com/Ozart"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-copper hover:text-copper-light transition-colors"
+                    >
+                      Facebook : Ozart
+                    </a>
+                  </div>
                 </div>
               </div>
+            </div>
+
+            {/* Zone d'intervention */}
+            <div className="mt-8 p-4 bg-[oklch(0.1_0.005_250)] border border-[oklch(0.18_0.005_250)]">
+              <p className="text-[10px] tracking-[0.2em] uppercase text-copper font-medium mb-1">
+                Zone d'intervention
+              </p>
+              <p className="text-xs text-[oklch(0.5_0.005_250)]">
+                Grand Est — Alsace, Lorraine & alentours
+              </p>
             </div>
           </motion.div>
 
@@ -164,12 +206,14 @@ export default function ContactSection() {
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full bg-[oklch(0.1_0.005_250)] border border-[oklch(0.2_0.005_250)] px-4 py-3 text-sm text-white focus:border-copper focus:outline-none transition-colors appearance-none"
                   >
-                    <option value="sol-epoxy">Sol en résine époxy</option>
-                    <option value="mur">Revêtement mural</option>
-                    <option value="tapis-pierre">Tapis de pierre</option>
-                    <option value="paillete">Résine pailletée</option>
-                    <option value="metallise">Époxy métallisé</option>
-                    <option value="art">Art décoratif</option>
+                    <option value="sol-epoxy">Sol — Résine Epoxy</option>
+                    <option value="sol-paillete">Sol — Résine pailletée</option>
+                    <option value="sol-tapis">Sol — Tapis de pierre</option>
+                    <option value="mur-design">Mur — Design sur mesure</option>
+                    <option value="mur-parement">Mur — Pierre de parement</option>
+                    <option value="mur-resine">Mur — Résine décorative</option>
+                    <option value="tableau">Accessoire — Tableau en résine</option>
+                    <option value="table">Accessoire — Table / Mobilier</option>
                     <option value="autre">Autre projet</option>
                   </select>
                 </div>

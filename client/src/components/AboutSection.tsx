@@ -6,12 +6,12 @@
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Award, MapPin, Clock, Wrench } from "lucide-react";
+import { Award, Globe, Paintbrush, Wrench } from "lucide-react";
 
 const stats = [
-  { icon: MapPin, label: "Localisation", value: "Grand Est" },
+  { icon: Globe, label: "Zone", value: "Grand Est" },
   { icon: Wrench, label: "Spécialité", value: "Résine époxy" },
-  { icon: Clock, label: "Expérience", value: "Bâtiment & déco" },
+  { icon: Paintbrush, label: "Métier", value: "Artiste & Déco" },
   { icon: Award, label: "Formation", value: "Certifié résine" },
 ];
 
@@ -83,8 +83,9 @@ export default function AboutSection() {
                 artistique.
               </p>
               <p>
-                Basé à Gundershoffen dans le Grand Est, OzArt intervient dans toute
-                la région pour donner vie à vos projets les plus ambitieux.
+                Basé dans le Grand Est, OzArt intervient dans toute la région
+                — Alsace, Lorraine et alentours — pour donner vie à vos
+                projets les plus ambitieux.
               </p>
             </div>
 

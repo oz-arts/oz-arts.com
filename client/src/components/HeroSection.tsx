@@ -39,7 +39,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-sm sm:text-base tracking-[0.3em] uppercase text-copper font-medium mb-6"
         >
-          Résine haut de gamme & art décoratif
+          Art & décoration sur mesure en résine
         </motion.p>
 
         <motion.h1
@@ -60,7 +60,7 @@ export default function HeroSection() {
           className="text-lg sm:text-xl text-[oklch(0.7_0.005_250)] max-w-2xl mx-auto mb-10 font-light leading-relaxed"
         >
           Spécialiste en résine époxy, revêtements décoratifs et créations
-          artistiques sur mesure dans le Grand Est.
+          artistiques sur mesure. Sols, murs et accessoires d'exception.
         </motion.p>
 
         <motion.div
