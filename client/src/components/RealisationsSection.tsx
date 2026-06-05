@@ -59,9 +59,9 @@ const projects = [
   },
   {
     src: "/images/mur-marbre-vert-or.webp",
-    title: "Mur Marbre Vert Émeraude & Or",
+    title: "Mur Effet Marbre Vert Émeraude & Or",
     category: "Revêtement mural",
-    description: "Mur en résine époxy effet marbre vert émeraude avec veines dorées. Un décor saisissant qui transforme un salon en véritable galerie d'art.",
+    description: "Un mur habillé d'un effet marbre vert émeraude aux veines dorées, d'une profondeur et d'un éclat saisissants. Un décor sur mesure qui transforme un salon en véritable galerie d'art.",
   },
 ];
 
