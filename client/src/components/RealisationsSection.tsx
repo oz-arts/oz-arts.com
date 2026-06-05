@@ -57,6 +57,12 @@ const projects = [
     category: "Revêtement de sol",
     description: "Sol époxy métallisé or et noir, vue d'ensemble d'un garage transformé.",
   },
+  {
+    src: "/images/mur-marbre-vert-or.webp",
+    title: "Mur Marbre Vert Émeraude & Or",
+    category: "Revêtement mural",
+    description: "Mur en résine époxy effet marbre vert émeraude avec veines dorées. Un décor saisissant qui transforme un salon en véritable galerie d'art.",
+  },
 ];
 
 const beforeAfter = {
