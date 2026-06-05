@@ -43,7 +43,7 @@ export default function ProcessSection() {
       {/* Background texture */}
       <div className="absolute inset-0">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028181851/NGaeCdrPK5aDRXggMw4TPY/services-bg-ZiBSynfFHh3P7jrFMvxLPS.webp"
+          src="/images/services-bg.jpg"
           alt=""
           className="w-full h-full object-cover opacity-15"
         />

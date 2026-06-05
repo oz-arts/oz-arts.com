@@ -35,7 +35,7 @@ export default function AboutSection() {
           >
             <div className="relative overflow-hidden aspect-[4/5]">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028181851/NGaeCdrPK5aDRXggMw4TPY/about-texture-M56u37yJpz9Tk7NeERL3no.webp"
+                src="/images/about-texture.jpg"
                 alt="Texture résine époxy noir marbre"
                 className="w-full h-full object-cover"
               />
@@ -71,21 +71,23 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-[oklch(0.6_0.005_250)] text-sm leading-relaxed mb-10">
               <p>
-                Fondateur d'OzArt, Ozkan SARMASIK est un artisan passionné dont le
-                parcours dans le bâtiment — peinture, carrelage, revêtements — l'a
-                naturellement conduit vers l'art de la résine époxy.
+                Fondateur d'OzArt — Les Beaux Arts, Ozkan SARMASIK est un artisan
+                passionné dont le parcours dans le bâtiment — peinture, carrelage,
+                revêtements — l'a naturellement conduit vers l'univers de la résine
+                décorative haut de gamme.
               </p>
               <p>
-                Formé aux techniques les plus avancées de la résine décorative, il
-                transforme chaque espace en une œuvre d'art unique. Du sol au mur, du
-                tapis de pierre à l'époxy métallisé, chaque projet est pensé comme
-                une création sur mesure, alliant savoir-faire artisanal et vision
-                artistique.
+                Après des années d'expérience sur le terrain et des formations
+                spécialisées en résine époxy, résine pailletée et tapis de pierre,
+                il a développé un savoir-faire unique qui allie technique du bâtiment
+                et sensibilité artistique. Chaque réalisation est pensée comme une
+                œuvre d'art — du sol au mur, du tableau décoratif à la table sur
+                mesure.
               </p>
               <p>
                 Basé dans le Grand Est, OzArt intervient dans toute la région
-                — Alsace, Lorraine et alentours — pour donner vie à vos
-                projets les plus ambitieux.
+                — Alsace, Lorraine et alentours — pour transformer vos
+                espaces en créations uniques qui reflètent votre personnalité.
               </p>
             </div>
 

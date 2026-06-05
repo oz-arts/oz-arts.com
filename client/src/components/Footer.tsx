@@ -2,7 +2,7 @@
  * DESIGN: Dark Atelier — Footer
  * Minimaliste, lignes cuivrées, liens essentiels.
  */
-import { Instagram, ArrowUp, Phone } from "lucide-react";
+import { Instagram, ArrowUp, Phone, Facebook } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -70,6 +70,22 @@ export default function Footer() {
               className="w-9 h-9 flex items-center justify-center border border-[oklch(0.22_0.005_250)] text-[oklch(0.45_0.005_250)] hover:border-copper hover:text-copper transition-all duration-300"
             >
               <Instagram size={16} />
+            </a>
+            <a
+              href="https://www.tiktok.com/@ozart.pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 flex items-center justify-center border border-[oklch(0.22_0.005_250)] text-[oklch(0.45_0.005_250)] hover:border-copper hover:text-copper transition-all duration-300"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.88 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.82.1v-3.5a6.37 6.37 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.6 6.34 6.34 0 0 0 9.49 22a6.34 6.34 0 0 0 6.34-6.34V9.4a8.16 8.16 0 0 0 3.76.92V6.87a4.83 4.83 0 0 1-.01-.18z"/></svg>
+            </a>
+            <a
+              href="https://www.facebook.com/Ozart"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 flex items-center justify-center border border-[oklch(0.22_0.005_250)] text-[oklch(0.45_0.005_250)] hover:border-copper hover:text-copper transition-all duration-300"
+            >
+              <Facebook size={16} />
             </a>
             <a
               href="tel:+33671874441"

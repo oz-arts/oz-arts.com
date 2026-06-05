@@ -16,7 +16,7 @@ export default function CTABanner() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028181851/NGaeCdrPK5aDRXggMw4TPY/cta-texture-DFp4gLp5bm9jjfwsYzgd6L.webp"
+          src="/images/cta-texture.jpg"
           alt=""
           className="w-full h-full object-cover"
         />

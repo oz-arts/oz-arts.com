@@ -3,48 +3,68 @@
  * Galerie asymétrique avec images du client. Chaque réalisation est traitée
  * comme une œuvre dans une galerie. Numérotation éditoriale visible.
  * Effet spotlight au hover — le reste s'assombrit.
+ * Inclut section avant/après pour le mur en résine.
  */
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
 const projects = [
   {
-    src: "/manus-storage/IMG-20260423-WA0003_40a8a19e.jpg",
+    src: "/images/mur-after-result.jpg",
+    title: "Mur Résine Marbre Noir & Or",
+    category: "Revêtement mural",
+    description: "Mur design sur mesure en résine, effet marbre noir avec veines blanches et dorées. Finition brillante haut de gamme.",
+  },
+  {
+    src: "/images/sol-epoxy-1.jpg",
     title: "Sol Époxy Métallisé Or",
     category: "Revêtement de sol",
     description: "Sol en résine époxy métallisée or et noir, finition miroir haute brillance.",
   },
   {
-    src: "/manus-storage/IMG-20260424-WA0001_74f3448f.jpg",
+    src: "/images/tableau-noir.jpg",
     title: "Tableau Marbre Noir",
     category: "Art décoratif",
     description: "Œuvre en résine effet marbre noir avec veines blanches, pièce unique.",
   },
   {
-    src: "/manus-storage/IMG-20260423-WA0007_d59952a9.jpg",
+    src: "/images/mur-bois-resine.jpg",
     title: "Mur Bois & Résine",
     category: "Revêtement mural",
     description: "Panneau mural bois et résine noire avec veines dorées et rétro-éclairage LED.",
   },
   {
-    src: "/manus-storage/IMG-20260423-WA0004_7a4f51fb.jpg",
+    src: "/images/tableau-turquoise.jpg",
     title: "Tableau Océan Turquoise",
     category: "Art décoratif",
     description: "Tableau en résine turquoise et or, inspiré des fonds marins.",
   },
   {
-    src: "/manus-storage/IMG-20260423-WA0001_60e0f159.jpg",
+    src: "/images/sol-epoxy-3.jpg",
     title: "Sol Époxy Vue Intérieure",
     category: "Revêtement de sol",
     description: "Vue rapprochée du sol époxy métallisé, reflets lumineux spectaculaires.",
   },
   {
-    src: "/manus-storage/IMG-20260424-WA0000_15b058d0.jpg",
+    src: "/images/tableau-beige.jpg",
     title: "Tableau Marbre Beige",
     category: "Art décoratif",
     description: "Œuvre en résine effet marbre beige et crème avec veines délicates.",
   },
+  {
+    src: "/images/sol-epoxy-2.jpg",
+    title: "Sol Époxy Or — Grand Format",
+    category: "Revêtement de sol",
+    description: "Sol époxy métallisé or et noir, vue d'ensemble d'un garage transformé.",
+  },
 ];
+
+const beforeAfter = {
+  before: "/images/mur-before-1.jpg",
+  after: "/images/mur-after-result.jpg",
+  title: "Transformation Mur Résine",
+  description: "D'un simple mur blanc à une œuvre d'art en résine effet marbre noir, blanc et or.",
+};
 
 function ProjectCard({
   project,
@@ -63,15 +83,15 @@ function ProjectCard({
   const isHovered = hoveredIndex === index;
   const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
 
-  // Asymmetric sizing: first and fourth items are larger
-  const isLarge = index === 0 || index === 3;
+  // Asymmetric sizing: first and fifth items are larger
+  const isLarge = index === 0 || index === 4;
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+      transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
       className={`relative overflow-hidden group ${
@@ -127,6 +147,117 @@ function ProjectCard({
             isHovered ? "border-copper/40" : "border-transparent"
           }`}
         />
+      </div>
+    </motion.div>
+  );
+}
+
+function BeforeAfterSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const [sliderPos, setSliderPos] = useState(50);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMove = (clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percent = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPos(percent);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="mt-20 lg:mt-28"
+    >
+      <div className="flex items-center gap-4 mb-8">
+        <div className="h-[1px] w-12 bg-copper" />
+        <span className="text-xs tracking-[0.3em] uppercase text-copper font-medium">
+          Avant / Après
+        </span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* Before/After Slider */}
+        <div
+          ref={containerRef}
+          className="relative aspect-[4/5] overflow-hidden cursor-col-resize select-none"
+          onMouseMove={(e) => handleMove(e.clientX)}
+          onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+        >
+          {/* After image (full) */}
+          <img
+            src={beforeAfter.after}
+            alt="Après"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Before image (clipped) */}
+          <div
+            className="absolute inset-0 overflow-hidden"
+            style={{ width: `${sliderPos}%` }}
+          >
+            <img
+              src={beforeAfter.before}
+              alt="Avant"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ width: `${100 / (sliderPos / 100)}%`, maxWidth: "none" }}
+            />
+          </div>
+
+          {/* Slider line */}
+          <div
+            className="absolute top-0 bottom-0 w-[2px] bg-copper z-10"
+            style={{ left: `${sliderPos}%` }}
+          >
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-copper flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 4L3 10L7 16" stroke="oklch(0.08 0.005 250)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M13 4L17 10L13 16" stroke="oklch(0.08 0.005 250)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          {/* Labels */}
+          <div className="absolute top-4 left-4 px-3 py-1 bg-[oklch(0.08_0.005_250)]/80 backdrop-blur-sm text-[10px] tracking-[0.2em] uppercase text-white font-medium">
+            Avant
+          </div>
+          <div className="absolute top-4 right-4 px-3 py-1 bg-copper/90 backdrop-blur-sm text-[10px] tracking-[0.2em] uppercase text-[oklch(0.08_0.005_250)] font-medium">
+            Après
+          </div>
+        </div>
+
+        {/* Description */}
+        <div className="lg:pl-8">
+          <h3 className="font-heading text-2xl lg:text-3xl font-bold text-white tracking-tight mb-4">
+            {beforeAfter.title}
+          </h3>
+          <p className="text-[oklch(0.55_0.005_250)] text-sm leading-relaxed mb-6">
+            {beforeAfter.description}
+          </p>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-copper rotate-45" />
+              <span className="text-sm text-[oklch(0.7_0.005_250)]">Mur design effet marbre</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-copper rotate-45" />
+              <span className="text-sm text-[oklch(0.7_0.005_250)]">Veines dorées artisanales</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-copper rotate-45" />
+              <span className="text-sm text-[oklch(0.7_0.005_250)]">Finition brillante haute résistance</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-copper rotate-45" />
+              <span className="text-sm text-[oklch(0.7_0.005_250)]">Réalisation en 3 à 5 jours</span>
+            </div>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -193,6 +324,9 @@ export default function RealisationsSection() {
             />
           ))}
         </div>
+
+        {/* Before/After Section */}
+        <BeforeAfterSection />
       </div>
     </section>
   );

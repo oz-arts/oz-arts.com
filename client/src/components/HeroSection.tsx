@@ -16,7 +16,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028181851/NGaeCdrPK5aDRXggMw4TPY/hero-banner-nRRkLNRGxzmkdjBBGzvqA3.webp"
+          src="/images/hero-banner.jpg"
           alt="Texture résine époxy"
           className="w-full h-full object-cover"
         />

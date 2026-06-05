@@ -95,9 +95,7 @@ export default function ContactSection() {
                 <div>
                   <p className="text-sm text-white font-medium">Horaires</p>
                   <p className="text-xs text-[oklch(0.5_0.005_250)] mt-0.5">
-                    Lun — Ven : 8h00 — 18h00
-                    <br />
-                    Sam : Sur rendez-vous
+                    Lun — Sam : 8h00 — 20h00
                   </p>
                 </div>
               </div>
