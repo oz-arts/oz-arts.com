@@ -23,9 +23,9 @@ const projects = [
   },
   {
     src: "/images/tableau-noir.jpg",
-    title: "Tableau Marbre Noir",
-    category: "Art décoratif",
-    description: "Œuvre en résine effet marbre noir avec veines blanches, pièce unique.",
+    title: "Échantillon Enduit Décoratif Marbre Noir",
+    category: "Enduit décoratif",
+    description: "Panneau d'échantillon réalisé à la main, illustrant la profondeur et l'intensité des effets obtenus en enduit décoratif. Jeu de matières entre le noir profond et les veines blanches nacrées — un aperçu du savoir-faire artisanal proposé pour vos projets muraux sur mesure.",
   },
   {
     src: "/images/mur-bois-resine.jpg",
