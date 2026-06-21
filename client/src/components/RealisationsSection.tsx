@@ -47,9 +47,9 @@ const projects = [
   },
   {
     src: "/images/tableau-beige.jpg",
-    title: "Tableau Marbre Beige",
-    category: "Art décoratif",
-    description: "Œuvre en résine effet marbre beige et crème avec veines délicates.",
+    title: "Échantillon Enduit Décoratif Marbre Beige",
+    category: "Enduit décoratif",
+    description: "Panneau d'échantillon réalisé à la main, illustrant la douceur et la noblesse des effets obtenus en enduit décoratif. Jeu de matières entre le beige chaud, le crème nacré et les veines délicates — un aperçu du savoir-faire artisanal proposé pour vos projets muraux sur mesure.",
   },
   {
     src: "/images/sol-epoxy-2.jpg",
