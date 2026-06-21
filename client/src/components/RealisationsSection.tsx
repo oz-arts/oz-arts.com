@@ -35,9 +35,9 @@ const projects = [
   },
   {
     src: "/images/tableau-turquoise.jpg",
-    title: "Tableau Océan Turquoise",
-    category: "Art décoratif",
-    description: "Tableau en résine turquoise et or, inspiré des fonds marins.",
+    title: "Échantillon Enduit Décoratif Effet Marbre",
+    category: "Enduit décoratif",
+    description: "Panneau d'échantillon réalisé à la main, illustrant la richesse des effets obtenus en enduit décoratif. Jeu de matières entre le blanc nacré, le bleu-vert profond et les veines dorées — un aperçu du savoir-faire artisanal proposé pour vos projets muraux sur mesure.",
   },
   {
     src: "/images/sol-epoxy-3.jpg",
