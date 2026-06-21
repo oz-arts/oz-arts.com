@@ -45,11 +45,6 @@ const categories = [
         description:
           "Pose de pierres de parement pour un rendu naturel et élégant. Intérieur et extérieur.",
       },
-      {
-        name: "Résine décorative",
-        description:
-          "Application de résine murale avec veines métalliques, pigments et effets de profondeur spectaculaires.",
-      },
     ],
   },
   {
