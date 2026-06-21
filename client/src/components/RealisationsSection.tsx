@@ -58,6 +58,12 @@ const projects = [
     description: "Sol époxy métallisé or et noir, vue d'ensemble d'un garage transformé.",
   },
   {
+    src: "/images/table-requins-3d.webp",
+    title: "Table Requins 3D — Cadeau Enfant",
+    category: "Tables & mobilier",
+    description: "Table en résine époxy sur mesure, conçue pour les petits passionnés de la mer. Requins en relief 3D intégrés dans une résine bleu océan d'une transparence saisissante — une pièce unique, idéale comme cadeau d'anniversaire original et mémorable.",
+  },
+  {
     src: "/images/echantillon-craquele-dore.webp",
     title: "Échantillon Enduit Décoratif Effet Craquelé",
     category: "Enduit décoratif",
