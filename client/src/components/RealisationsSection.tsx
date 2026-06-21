@@ -29,9 +29,9 @@ const projects = [
   },
   {
     src: "/images/mur-bois-resine.jpg",
-    title: "Mur Bois & Résine",
+    title: "Mur Carrelage Design Artistique",
     category: "Revêtement mural",
-    description: "Panneau mural bois et résine noire avec veines dorées et rétro-éclairage LED.",
+    description: "Une composition murale d'exception alliant carrelage grand format et finitions artistiques sur mesure. Chaque détail est conçu pour sublimer l'espace et créer une atmosphère unique, entre élégance contemporaine et savoir-faire artisanal.",
   },
   {
     src: "/images/tableau-turquoise.jpg",
