@@ -64,6 +64,12 @@ const projects = [
     description: "Panneau d'échantillon réalisé à la main, illustrant la singularité de l'effet craquelé en enduit décoratif. Texture blanche aux fines craquelures révélant un fond doré lumineux — un aperçu du savoir-faire artisanal proposé pour vos projets muraux sur mesure.",
   },
   {
+    src: "/images/echantillon-enduit-rose-taupe.webp",
+    title: "Échantillon Enduit Décoratif Rosé & Taupe",
+    category: "Enduit décoratif",
+    description: "Panneau d'échantillon réalisé à la main, illustrant la subtile élégance de l'enduit décoratif en ton rosé et taupe. Matière vivante aux effets vaporeux et nacrés — un aperçu du savoir-faire artisanal proposé pour vos projets muraux sur mesure.",
+  },
+  {
     src: "/images/mur-marbre-vert-or.webp",
     title: "Mur Effet Marbre Vert Émeraude & Or",
     category: "Revêtement mural",
