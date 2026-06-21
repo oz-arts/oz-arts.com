@@ -68,8 +68,8 @@ const projects = [
 const beforeAfter = {
   before: "/images/mur-before-1.jpg",
   after: "/images/mur-after-result.jpg",
-  title: "Transformation Mur Résine",
-  description: "D'un simple mur blanc à une œuvre d'art en résine effet marbre noir, blanc et or.",
+  title: "Transformation Mur en Enduit Décoratif",
+  description: "D'un simple mur blanc à une œuvre d'art en enduit décoratif effet marbre noir, blanc et or.",
 };
 
 function ProjectCard({
