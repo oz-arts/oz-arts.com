@@ -3,7 +3,7 @@
  * Galerie asymétrique avec images du client. Chaque réalisation est traitée
  * comme une œuvre dans une galerie. Numérotation éditoriale visible.
  * Effet spotlight au hover — le reste s'assombrit.
- * Inclut section avant/après pour le mur en résine.
+ * Inclut section avant/après pour le mur en enduit décoratif.
  */
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -11,9 +11,9 @@ import { useRef, useState } from "react";
 const projects = [
   {
     src: "/images/mur-after-result.jpg",
-    title: "Mur Résine Marbre Noir & Or",
-    category: "Revêtement mural",
-    description: "Mur design sur mesure en résine, effet marbre noir avec veines blanches et dorées. Finition brillante haut de gamme.",
+    title: "Mur Enduit Décoratif Marbre Noir & Or",
+    category: "Enduit décoratif",
+    description: "Mur design sur mesure en enduit décoratif, façonné à la main pour un effet marbre noir saisissant aux veines blanches et dorées. Une finition haut de gamme qui transforme chaque surface en œuvre d'art unique.",
   },
   {
     src: "/images/sol-epoxy-1.jpg",
