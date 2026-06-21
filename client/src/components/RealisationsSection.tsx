@@ -58,6 +58,12 @@ const projects = [
     description: "Sol époxy métallisé or et noir, vue d'ensemble d'un garage transformé.",
   },
   {
+    src: "/images/echantillon-craquele-dore.webp",
+    title: "Échantillon Enduit Décoratif Effet Craquelé",
+    category: "Enduit décoratif",
+    description: "Panneau d'échantillon réalisé à la main, illustrant la singularité de l'effet craquelé en enduit décoratif. Texture blanche aux fines craquelures révélant un fond doré lumineux — un aperçu du savoir-faire artisanal proposé pour vos projets muraux sur mesure.",
+  },
+  {
     src: "/images/mur-marbre-vert-or.webp",
     title: "Mur Effet Marbre Vert Émeraude & Or",
     category: "Revêtement mural",
