@@ -38,7 +38,7 @@ const categories = [
       {
         name: "Mur design sur mesure",
         description:
-          "Effet marbre, mur craquelé, intégration bois et rétro-éclairage LED. Des murs qui deviennent des œuvres d'art.",
+          "Effet marbre, mur craquelé, carrelage design artistique avec rétro-éclairage LED. Des murs qui deviennent des œuvres d'art.",
       },
       {
         name: "Pierre de parement",
