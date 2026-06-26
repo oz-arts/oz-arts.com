@@ -122,7 +122,7 @@ export default function ContactSection() {
                       TikTok : @ozart_pro
                     </a>
                     <a
-                      href="https://www.facebook.com/Ozart"
+                      href="https://www.facebook.com/profile.php?id=61590876725005"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-copper hover:text-copper-light transition-colors"
