@@ -52,14 +52,13 @@ export default function Navbar() {
                 e.preventDefault();
                 handleNavClick("#accueil");
               }}
-              className="flex flex-col items-start group"
+              className="flex items-center group"
             >
-              <span className="font-heading text-2xl lg:text-3xl font-bold tracking-[0.15em] text-white group-hover:text-gradient-copper transition-colors duration-300">
-                OZ<span className="text-gradient-copper">ART</span>
-              </span>
-              <span className="text-[8px] lg:text-[9px] tracking-[0.35em] uppercase text-[oklch(0.55_0.005_250)] font-medium -mt-0.5">
-                — Les Beaux Arts —
-              </span>
+              <img
+                src="/images/ozart-logo.png"
+                alt="OzArt — Les Beaux Arts"
+                className="h-12 lg:h-16 w-auto object-contain"
+              />
             </a>
 
             {/* Desktop Nav */}
