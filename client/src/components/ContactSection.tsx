@@ -106,20 +106,20 @@ export default function ContactSection() {
                   <p className="text-sm text-white font-medium">Réseaux sociaux</p>
                   <div className="flex flex-col gap-1 mt-0.5">
                     <a
-                      href="https://www.instagram.com/ozart.pro"
+                      href="https://www.instagram.com/ozart_pro"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-copper hover:text-copper-light transition-colors"
                     >
-                      Instagram : @ozart.pro
+                      Instagram : @ozart_pro
                     </a>
                     <a
-                      href="https://www.tiktok.com/@ozart.pro"
+                      href="https://www.tiktok.com/@ozart_pro"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-copper hover:text-copper-light transition-colors"
                     >
-                      TikTok : @ozart.pro
+                      TikTok : @ozart_pro
                     </a>
                     <a
                       href="https://www.facebook.com/Ozart"

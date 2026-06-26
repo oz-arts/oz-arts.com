@@ -64,7 +64,7 @@ export default function Footer() {
           {/* Right — Social + back to top */}
           <div className="flex items-center gap-4">
             <a
-              href="https://www.instagram.com/ozart.pro"
+              href="https://www.instagram.com/ozart_pro"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 flex items-center justify-center border border-[oklch(0.22_0.005_250)] text-[oklch(0.45_0.005_250)] hover:border-copper hover:text-copper transition-all duration-300"
@@ -72,7 +72,7 @@ export default function Footer() {
               <Instagram size={16} />
             </a>
             <a
-              href="https://www.tiktok.com/@ozart.pro"
+              href="https://www.tiktok.com/@ozart_pro"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 flex items-center justify-center border border-[oklch(0.22_0.005_250)] text-[oklch(0.45_0.005_250)] hover:border-copper hover:text-copper transition-all duration-300"

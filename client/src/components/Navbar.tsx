@@ -78,7 +78,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="https://www.instagram.com/ozart.pro"
+                href="https://www.instagram.com/ozart_pro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[oklch(0.5_0.005_250)] hover:text-copper transition-colors duration-300"
@@ -138,7 +138,7 @@ export default function Navbar() {
               className="flex items-center gap-6 mt-8 text-[oklch(0.5_0.005_250)]"
             >
               <a
-                href="https://www.instagram.com/ozart.pro"
+                href="https://www.instagram.com/ozart_pro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-copper transition-colors"
