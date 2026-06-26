@@ -57,7 +57,7 @@ export default function Navbar() {
               <img
                 src="/images/ozart-logo.png"
                 alt="OzArt — Les Beaux Arts"
-                className="h-12 lg:h-16 w-auto object-contain"
+                className="h-16 lg:h-20 w-auto object-contain"
               />
             </a>
 
